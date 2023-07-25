@@ -5,11 +5,16 @@ class UsersControllers {
   }
 
   getUsers = (req, res) => {
-    res.send("Respondo con todos los usuarios");
+    const users = this.usersService.getUsers();
+    res.status(200).json(users);
   };
+
   getUsersById = (req, res) => {
-    res.send("Respondo con un usuario");
+    const { id } = req.params;
+    const user = this.usersService.getUsersById(id);
+    res.status(200).json(user);
   };
+
   createUsers = (req, res) => {
     res.send("creo un usuario");
   };
