@@ -1,16 +1,16 @@
 const data = [
   {
-    id: "1",
+    id: 1,
     username: "tukin",
     mail: "tukin@mail.com",
   },
   {
-    id: "2",
+    id: 2,
     username: "rambo",
     mail: "rambo@mail.com",
   },
   {
-    id: "3",
+    id: 3,
     username: "miko",
     mail: "miko@mail.com",
   },
@@ -21,7 +21,7 @@ const getUsers = () => {
 };
 
 const getUsersById = (id) => {
-  return data.filter((e) => e.id === id);
+  return data.filter((e) => e.id == id);
 };
 
 module.exports = { getUsers, getUsersById };
