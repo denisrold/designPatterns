@@ -1,5 +1,8 @@
 class UsersControllers {
-  constructor() {}
+  //inyeccion de dependencias: Le digo al controlador cuando creo la instancia, con que serivicio de usuario va a trabajar.
+  constructor(usersServices) {
+    this.usersService = usersServices;
+  }
 
   getUsers = (req, res) => {
     res.send("Respondo con todos los usuarios");
