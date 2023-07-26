@@ -22,6 +22,7 @@ const validateAddress = (req, res, next) => {
 };
 const validateErrors = (req, res, next) => {
   if (req.errors.length) res.status(400).json(req.errors);
+  //si no hay errores le permito seguir sino ya le mando la respuesta.
   else {
     next();
   }
