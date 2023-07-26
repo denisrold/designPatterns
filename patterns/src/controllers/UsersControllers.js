@@ -16,7 +16,10 @@ class UsersControllers {
   };
 
   createUsers = (req, res) => {
-    res.send("creo un usuario");
+    const { username, mail, address } = req.body;
+    //matriz de middleWare:
+    this.usersService.createUser({ username, mail, address });
+    res.status(200).json({ created: "Ok" });
   };
 }
 

@@ -1,5 +1,7 @@
 const { Router } = require("express");
 const UsersControllers = require("../controllers/UsersControllers");
+//mi middleware validator
+const createUserValidator = require("../middleWare/createUserValidation");
 
 const router = Router(require("../services/usersServices"));
 const userServices = require("../services/usersServices");
@@ -11,6 +13,7 @@ router.get("/users", controller.getUsers);
 
 router.get("/users/:id", controller.getUsersById);
 
-router.post("/userss", controller.createUsers);
+//Se lo paso por parametros
+router.post("/users", createUserValidator, controller.createUsers);
 
 module.exports = router;
